@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="text">Name</label>
+    <input type="text" id="name">
+    <button onclick="addRow()">Add</button>
+    <button onclick="updateName()">Update</button>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+    <script>
+        let arr = []
+        let index = -1
+
+        function display(){
+            let temp = ''
+            for(let i= 0; i<arr.length; i++){
+            temp+= `
+                <tr>
+                    <td>${i+1}</td>
+                    <td>${arr[i]}</td>
+                    <td><button onclick="Edit(${i})">Edit</button><button onclick="remove(${i})">Delete</button></td>
+                </tr>`
+            
+            }
+
+            document.getElementById("tableBody").innerHTML = temp
+        }
+
+        function addRow(){
+            temp = document.getElementById("name").value
+            arr.push(temp);
+            display();
+            document.getElementById("name").value = ""
+        }
+
+        function remove(i){
+            arr.splice(i,1)
+            display();
+        }
+        function Edit(i){
+            document.getElementById("name").value = arr[i]
+            index = i
+        }
+
+        function updateName(){
+            temp = document.getElementById("name").value
+            arr[index] = temp
+            display()
+            index = -1
+            document.getElementById("name").value = ""
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let word = prompt("enter the word: ")
+        let fI = word.indexOf('a')
+        let lI = word.lastIndexOf('a')
+
+        if (fI !== -1 && lI !== -1 && fI !== lI) {
+            let result = word.substring(fI + 1, lI)
+            document.write("String between first and last 'a': " + result)
+        }
+    </script>
+</body>
+</html>

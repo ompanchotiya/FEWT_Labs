@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let today = new Date()
+
+        let days = ['sun','mon','tue','wed','thu','fri','sat']
+        let months = ['jan','feb','march','apr','may','jun','july','aug','sep','oct','nov','dec']
+
+        
+        let m = today.getMonth()
+        let d = today.getDay()
+
+        document.write(today)
+        document.write("<br/>")
+        document.write(today.getYear())
+        document.write("<br/>")
+        document.write(months[m])
+        document.write("<br/>")
+        document.write(days[d])
+        document.write("<br/>")
+        document.write(today.toLocaleTimeString())
+    </script>
+</body>
+</html>

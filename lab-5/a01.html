@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let faculty = [
+            {
+              name: "Alfred Purdy",
+              department: "Industrial",
+              email: "Paige_Gorczany@yahoo.com",
+              phoneNo: "(221) 633-1199",
+              id: "1"
+            },
+            {
+              name: "Misty Bauch",
+              department: "Music",
+              email: "Theresa1@hotmail.com",
+              phoneNo: "984-345-6387 x543",
+              id: "2"
+            },
+            {
+              name: "Irene Bradtke",
+              department: "Computers",
+              email: "Abner91@yahoo.com",
+              phoneNo: "1-349-972-8545 x0383",
+              id: "3"
+            },
+            {
+              name: "Terri Bauch",
+              department: "Sports",
+              email: "Edna_Anderson@yahoo.com",
+              phoneNo: "(800) 625-2939",
+              id: "4"
+            },
+            {
+              name: "Jimmie Heidenreich",
+              department: "Electronics",
+              email: "Myrtis_Gottlieb@yahoo.com",
+              phoneNo: "(963) 422-5025",
+              id: "5"
+            },
+            {
+              name: "Tamara Jast",
+              department: "Toys",
+              email: "Rebecca67@yahoo.com",
+              phoneNo: "(329) 861-8080 x094",
+              id: "6"
+            }
+        ]
+        document.write('<table border="1px solid black">')
+            document.write("<thead>")
+                document.write("<tr>")
+                    document.write("<th>name<th/>")
+                    document.write("<th>department<th/>")
+                    document.write("<th>email<th/>")
+                    document.write("<th>phoneNo<th/>")
+                    document.write("<th>id<th/>")
+                document.write("<tr/>")
+            document.write("<thead/>")
+            document.write("<tbody>")
+                for(let i=0; i<faculty.length; i++){
+                    document.write("<tr>")
+                        document.write("<td>"+faculty[i].name+"<td/>")
+                        document.write("<td>"+faculty[i].department+"<td/>")
+                        document.write("<td>"+faculty[i].email+"<td/>")
+                        document.write("<td>"+faculty[i].phoneNo+"<td/>")
+                        document.write("<td>"+faculty[i].id+"<td/>")
+                    document.write("<tr/>")
+                }0
+            document.write("<tbody/>")
+        document.write("<table/>")
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student validation</title>
+
+
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form novalidate name="myform" id="myform">
+        <h1>Student Registration Form</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <span id="nameError" class="error"></span><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <span id="emailError" class="error"></span><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <span id="passwordError" class="error"></span><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+        <span id="confirmPasswordError" class="error"></span><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+        <span id="ageError" class="error"></span><br>
+
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="">Select a course</option>
+            <option value="btech">B.Tech</option>
+            <option value="mtech">M.Tech</option>
+            <option value="mba">MBA</option>
+        </select><br><br>
+
+        <label for="enrolment">Enrolment Number:</label>
+        <input type="text" id="enrolment" name="enrolment" required><br>
+        <span id="enrolmentError" class="error"></span><br>
+
+        <input type="submit" value="submit">
+    </form>
+
+
+    <script>
+        document.getElementById("myform").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let namePattern = /^[A-Za-z\s]+$/;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let agePattern = /^\d+$/;
+            let enrolmentPattern = /^[0-9]{11}$/;
+            let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let age = document.getElementById("age").value;
+            let course = document.getElementById("course").value;
+            let enrolment = document.getElementById("enrolment").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (!namePattern.test(name)) {
+                document.getElementById("nameError").innerHTML = "Please enter a valid name (only letters and spaces).";
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerHTML = "Please enter a valid email address.";
+                return false;
+            }
+
+            if (!agePattern.test(age) || age < 18 || age > 100) {
+                document.getElementById("ageError").innerHTML = "Please enter a valid age (between 18 and 100).";
+                return false;
+            }
+
+            if (course === "") {
+                document.getElementById("courseError").innerHTML = "Please select a course.";
+                return false;
+            }
+
+            if (!enrolmentPattern.test(enrolment)) {
+                document.getElementById("enrolmentError").innerHTML = "Please enter a valid enrolment number (11 digits).";
+                return false;
+            }
+
+            if (!passwordPattern.test(password)) {
+                document.getElementById("passwordError").innerHTML = "Password must be at least 8 characters long and contain at least one letter and one number.";
+                return false;
+            }
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match.";
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+        });
+
+    </script>
+</body>
+
+</html>

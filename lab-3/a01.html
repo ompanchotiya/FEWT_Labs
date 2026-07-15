@@ -1,0 +1,29 @@
+<!-- 1. Demonstrate the use of array to ƒind maximum number. (A)
+3. WAP to read an array from the user and sort them using bubble sort. (A)
+4. WAP to read an array form the user and sort them using quick sort. (B)
+5. Write a JavaScript that uses a loop that searches a word in sentence held in an array, returning the index of the
+word. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = [],max=0
+
+        for(let i=0;i<5;i++){
+            a[i]=parseInt(prompt("enter a number:"))
+        }
+
+        for(let i=0;i<5;i++){
+            if(a[i]<a[i+1]){
+                max=a[i+1]
+            }
+        }
+        document.write(max)
+    </script>
+</body>
+</html>

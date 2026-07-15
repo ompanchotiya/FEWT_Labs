@@ -1,0 +1,86 @@
+<!-- 1. WAP to create a basic graphical Calculator using HTML and JavaScript. (A) -->
+<!-- 2. WAP to create a static login page using HTML and JavaScript. (B) -->
+<!-- 3. WAP to create a scientiƒc graphical calculator using HTML and JavaScript. (C) -->
+<!-- 4. Write a JavaScript program to validate user data given from the HTML form (A)
+1) username must be of minimum 8 characters
+2) password must contain at least 1 digit and 1 special character and should be between 8-12 characters
+3) password and repeat password must be same
+4) age must be greater than 18 (calculate from date of birth)
+5) enrollment must be of 11 digits
+6) email validation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100%
+        }
+    </style>
+</head>
+<body>
+    <table border="1px solid black">
+        <Thead>
+            <tr>
+                <th colspan="4"><input type="text" id="screen"></th>
+            </tr>
+        </Thead>
+        <tbody>
+            <tr>
+                <td><button onclick="delByLast()">del</button></td>
+                <td><button onclick="display('/')">/</button></td>
+                <td><button onclick="display('+')">+</button></td>
+                <td><button onclick="clear1()">AC</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="display('7')">7</button></td>
+                <td><button onclick="display('8')">8</button></td>
+                <td><button onclick="display('9')">9</button></td>
+                <td><button onclick="display('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="display('4')">4</button></td>
+                <td><button onclick="display('5')">5</button></td>
+                <td><button onclick="display('6')">6</button></td>
+                <td><button onclick="display('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="display('1')">1</button></td>
+                <td><button onclick="display('2')">2</button></td>
+                <td><button onclick="display('3')">3</button></td>
+                <td><button onclick="display('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="display('0')">0</button></td>
+                <td><button onclick="display('.')">.</button></td>
+                <td><button onclick="display('%')">%</button></td>
+                <td><button onclick="calculate('ans')">=</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function display(num){
+            document.getElementById('screen').value+=num
+        }
+        function calculate(){
+            exp = document.getElementById('screen').value
+            if(exp){
+                ans = eval(exp)
+                document.getElementById('screen').value = ans
+            }
+        }
+        function clear1(){
+            document.getElementById('screen').value = " "
+        }
+        function delByLast(){
+            exp = document.getElementById('screen').value
+            if(exp){
+                ans = exp.slice(0,-1)
+                document.getElementById('screen').value = ans
+            }
+        }
+    </script>
+</body>
+</html>

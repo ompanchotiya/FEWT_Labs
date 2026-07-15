@@ -1,0 +1,32 @@
+<!-- 2. WAP to read an array from the user and sort them in ascending order. (A) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = [],temp=0,n=5
+
+        for(let i=0;i<n;i++){
+            a[i]=parseInt(prompt("enter a number:"))
+        }
+
+        for(let i
+        =0;i<n;i++){
+            for(let j=i+1;j<n;j++){
+                if(a[i]>a[j]){
+                temp=a[i]
+                a[i]=a[j]
+                a[j]=temp
+                }
+            }
+        }
+        for(let i=0;i<5;i++){
+            document.write(a[i])
+        }
+    </script>
+</body>
+</html>

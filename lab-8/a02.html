@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Bchange{
+            height: 100px;
+            width: 150px;
+            align-items: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="Bchange">All Mouse Events</div>
+    <script>
+        document.getElementById("Bchange").addEventListener("click",function(){
+            document.getElementById("Bchange").innerHTML = "click Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("dblclick",function(){
+            document.getElementById("Bchange").innerHTML = "dblclick Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("mousedown",function(){
+            document.getElementById("Bchange").innerHTML = "mousedown Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("mouseup",function(){
+            document.getElementById("Bchange").innerHTML = "mouseup Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("mousemove",function(){
+            document.getElementById("Bchange").innerHTML = "mousemove Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("mouseover",function(){
+            document.getElementById("Bchange").innerHTML = "mouseover Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("mouseout",function(){
+            document.getElementById("Bchange").innerHTML = "mouseout Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("mouseenter",function(){
+            document.getElementById("Bchange").innerHTML = "mouseenter Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("mouseleave",function(){
+            document.getElementById("Bchange").innerHTML = "mouseleave Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("contexmenu",function(e){
+            e.preventDefault();
+            document.getElementById("Bchange").innerHTML = "contexmenu Event Fired"
+        })
+        document.getElementById("Bchange").addEventListener("wheel",function(){
+            document.getElementById("Bchange").innerHTML = "wheel Event Fired"
+        })
+    </script>
+</body>
+</html>
