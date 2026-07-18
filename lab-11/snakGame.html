@@ -3,32 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Snake Game</title>
     <style>
-        #Snake{
-            position: absolute;
-            height: 50px;
-            width: 50px;
-            background-color: black;
-            border: 1px solid black;
+        body{
+            overflow: hidden;
+        }
+        #snake{
+            position:absolute;
+            left:0px;
+            top:200px;
+            width:50px;
+            height:50px;
+        }
+        #laddu{
+            position:absolute;
+            left:300px;
+            top:300px;
+            width:40px;
+            height:40px;
         }
     </style>
 </head>
-<body>
-    <button onclick="StartRight()">MoveRight</button>
-    <button onclick="StartLeft">MoveLeft</button>
-    <button onclick="StartTop">MoveTop</button>
-    <button onclick="StartBotam">MoveBottom</button>
-    <div id="Snake"></div>
+<body onkeydown="checkInput(event)">
+    <button onclick="startLeft()">Left</button>
+    <button onclick="startRight()">Right</button>
+    <button onclick="startTop()">Top</button>
+    <button onclick="startBottom()">Bottom</button>
+    
+    <h2>Current Life : <span id="currentLife">3</span></h2>
+    <h2>Current Score : <span id="currentScore">0</span></h2>
+    
+    <img src="./Image/OIP.jpg" id="snake">
+    <img src="./Image/OIP (1).jpg" id="laddu">
+    
     <script>
-        x = 0
-        function StartRight(){
-            
+        let currentX = 0;
+        let currentY = 200; 
+        let currentLife = 3;
+        let currentScore = 0;  
+        let currentSpeed = 20;
+        let intRef = null;
+        
+        let ladduX = 300;
+        let ladduY = 300;
+    
+        
+        function checkInput(e){
+            if(e.key=="ArrowRight"){
+                startRight();
+            }
+            else if(e.key=="ArrowLeft"){
+                startLeft();
+            }
+            else if(e.key=="ArrowUp"){
+                startTop();
+            }
+            else if(e.key=="ArrowDown"){
+                startBottom();
+            }
+        
         }
-        function MoveRight(){
-            x++
-            document.getElementById("Snake").style.left = x +"px"
+
+
+        function startRight(){
+            clearInterval(intRef);
+            intRef=setInterval(moveRight,currentSpeed);
+            document.getElementById("snake").style.transform = "rotate(180deg)";
+        }  
+        function moveRight(){
+            currentX+=5;
+            let snake=document.getElementById("snake");
+            snake.style.left=currentX+"px";
+            checkLimit();
+        } 
+        function startLeft(){
+            clearInterval(intRef);
+            intRef=setInterval(moveLeft,currentSpeed);
+            document.getElementById("snake").style.transform = "rotate(0deg)";
         }
+        function moveLeft(){
+            currentX-=5;
+            let snake=document.getElementById("snake");
+            snake.style.left=currentX+"px";
+            checkLimit();
+        }
+        function startTop(){
+            clearInterval(intRef);
+            intRef=setInterval(moveTop,currentSpeed);
+            document.getElementById("snake").style.transform = "rotate(90deg)";
+        }
+        function moveTop(){
+            currentY-=5;
+            let snake=document.getElementById("snake");
+            snake.style.top=currentY+"px";
+            checkLimit();
+        }  
+        function startBottom(){
+            clearInterval(intRef);
+            intRef=setInterval(moveBottom,currentSpeed);
+            document.getElementById("snake").style.transform = "rotate(-90deg)";
+        }
+        
+        function moveBottom(){
+            currentY+=5;
+            let snake=document.getElementById("snake");
+            snake.style.top=currentY+"px";
+            checkLimit();
+        }
+        
+        
+        function checkLimit(){
+            let maxWidth=window.innerWidth-50;
+            let maxHeight=window.innerHeight-50;
+            if(currentX<0 || currentY<0 || currentX>maxWidth || currentY>maxHeight){
+                clearInterval(intRef);
+                currentLife--;
+                document.getElementById("currentLife").innerHTML=currentLife;
+        
+                if(currentLife<=0){
+                    alert("Game Over!");
+                    location.reload();
+                }
+        
+                currentX=0;
+                currentY=200;
+        
+                let snake=document.getElementById("snake");
+                snake.style.left=currentX+"px";
+                snake.style.top=currentY+"px";
+        
+            }
+            if(Math.abs(currentX-ladduX)<40 && Math.abs(currentY-ladduY)<40){
+                changeLadduPosition();
+            }
+        
+        }
+
+        
+        function changeLadduPosition(){
+            currentScore++;
+            document.getElementById("currentScore").innerHTML=currentScore;
+        
+            if(currentScore==5){
+                currentSpeed=15;
+            }
+            if(currentScore==10){
+                currentSpeed=10;
+            }
+            if(currentScore==20){
+                currentSpeed=5;
+            }  
+            ladduX=Math.floor(Math.random()*(window.innerWidth-60));
+            ladduY=Math.floor(Math.random()*(window.innerHeight-60));     
+            let laddu=document.getElementById("laddu");
+        
+            laddu.style.left=ladduX+"px";
+            laddu.style.top=ladduY+"px";
+            clearInterval(intRef);
+        
+        }
+        changeLadduPosition();
     </script>
+
 </body>
 </html>
