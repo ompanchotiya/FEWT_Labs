@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Snake{
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            background-color: black;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="StartRight()">MoveRight</button>
+    <button onclick="StartLeft">MoveLeft</button>
+    <button onclick="StartTop">MoveTop</button>
+    <button onclick="StartBotam">MoveBottom</button>
+    <div id="Snake"></div>
+    <script>
+        x = 0
+        function StartRight(){
+            
+        }
+        function MoveRight(){
+            x++
+            document.getElementById("Snake").style.left = x +"px"
+        }
+    </script>
+</body>
+</html>
