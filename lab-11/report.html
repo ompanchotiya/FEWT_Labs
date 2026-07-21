@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance Report</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    padding:30px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+h1{
+    text-align:center;
+    color:#333;
+    margin-bottom:30px;
+}
+
+.summary{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.card{
+    flex:1;
+    min-width:180px;
+    background:#007bff;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.card h2{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:30px;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#007bff;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f7f7f7;
+}
+
+.present{
+    color:green;
+    font-weight:bold;
+}
+
+.absent{
+    color:red;
+    font-weight:bold;
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+#restartBtn{
+    background:#dc3545;
+    color:white;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Attendance Report</h1>
+
+<div class="summary">
+
+<div class="card">
+<h2>Total Students</h2>
+<p id="totalStudents">0</p>
+</div>
+
+<div class="card">
+<h2>Present</h2>
+<p id="presentTotal">0</p>
+</div>
+
+<div class="card">
+<h2>Absent</h2>
+<p id="absentTotal">0</p>
+</div>
+
+<div class="card">
+<h2>Attendance %</h2>
+<p id="percentage">0%</p>
+</div>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Roll No</th>
+<th>Name</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody id="reportTable">
+
+</tbody>
+
+</table>
+
+<div class="buttons">
+
+<button id="restartBtn" onclick="restartAttendance()">
+Take Attendance Again
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+
+let attendanceData =
+JSON.parse(localStorage.getItem("attendanceData")) || [];
+
+if(attendanceData.length==0){
+    alert("No attendance data found.");
+    window.location.href="index.html";
+}
+
+
+const students = {
+
+1:"Student 1",
+2:"Student 2",
+3:"Student 3",
+4:"Student 4",
+5:"Student 5",
+6:"Student 6",
+7:"Student 7",
+8:"Student 8",
+9:"Student 9",
+10:"Student 10",
+11:"Student 11",
+12:"Student 12",
+13:"Student 13",
+14:"Student 14",
+15:"Student 15",
+16:"Student 16",
+17:"Student 17",
+18:"Student 18",
+19:"Student 19",
+20:"Student 20",
+21:"Student 21",
+22:"Student 22",
+23:"Student 23",
+24:"Student 24",
+25:"Student 25",
+26:"Student 26",
+27:"Student 27",
+28:"Student 28",
+29:"Student 29",
+30:"Student 30",
+31:"Student 31",
+32:"Student 32",
+33:"Student 33",
+34:"Student 34",
+35:"Student 35",
+36:"Student 36",
+37:"Student 37",
+38:"Student 38",
+39:"Student 39",
+40:"Student 40",
+41:"Student 41",
+42:"Student 42",
+43:"Student 43",
+44:"Student 44",
+45:"Student 45",
+46:"Student 46",
+47:"Student 47",
+48:"Student 48",
+49:"Student 49",
+50:"Student 50"
+
+};
+
+let tbody=document.getElementById("reportTable");
+
+let present=0;
+let absent=0;
+
+attendanceData.forEach(function(student){
+
+    let row=document.createElement("tr");
+
+    let name=students[student.roll] || ("Roll "+student.roll);
+
+    row.innerHTML=`
+        <td>${student.roll}</td>
+        <td>${name}</td>
+        <td>${student.date}</td>
+        <td class="${student.status=="Present"?"present":"absent"}">
+        ${student.status}
+        </td>
+    `;
+    tbody.appendChild(row);
+
+    if(student.status=="Present")
+        present++;
+    else
+        absent++;
+
+});
+
+
+
+let total=attendanceData.length;
+
+document.getElementById("totalStudents").innerHTML=total;
+
+document.getElementById("presentTotal").innerHTML=present;
+
+document.getElementById("absentTotal").innerHTML=absent;
+
+document.getElementById("percentage").innerHTML=
+((present/total)*100).toFixed(2)+"%";
+
+function restartAttendance(){
+
+    localStorage.removeItem("attendanceData");
+    localStorage.removeItem("minRoll");
+    localStorage.removeItem("maxRoll");
+    localStorage.removeItem("attendanceDate");
+
+    window.location.href="index.html";
+
+}
+
+</script>
+</body>
+</html>
