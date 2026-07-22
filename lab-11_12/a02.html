@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changeAll(true)">Check</button>
+    <button onclick="changeAll(false)">Uncheck</button>
+
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Roll No.</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div class="result-panel">
+            <p class="result-title">Absent Students</p>
+            <div id="result"></div>
+        </div>
+
+    <script>
+        for (i = 1; i <= 60; i++) {
+            document.write(
+            `<input onclick='changeAbPr()' type='checkbox' value='${i}' /> ${i} <br />`,
+            );
+        }
+
+        function changeAll(temp) {
+            allStudents = document.getElementsByTagName("input");
+            for (i = 0; i < 60; i++) {
+                allStudents[i].checked = temp;
+            }
+        }
+        function changeAbPr() {
+            allStudents = document.getElementsByTagName("input");
+            absents = [];
+            for (i = 0; i < allStudents.length; i++) {
+                if (!allStudents[i].checked) {
+                    absents.push(allStudents[i].value);
+                }
+            }
+            document.getElementById("result").textContent = absents.join(", ");
+        }
+    </script>
+</body>
+</html>

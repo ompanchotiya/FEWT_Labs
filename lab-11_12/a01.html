@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Students{
+
+            constructor(name, age, PhoneNo){
+                this.name = name;
+                this.age = age;
+                this.PhoneNo = PhoneNo;
+            }
+
+            display() {
+                console.log("Name: ", this.name);
+                console.log("Age: ", this.age);
+                console.log("PhoneNo: ", this.PhoneNo);
+            }
+        }
+
+        const student1 = new Student("Om", 18, 1111111111);
+        const student2 = new Student("mayank", 19, 2222222222)
+
+        student1.display();
+        student2.display();
+    </script>
+</body>
+</html>
