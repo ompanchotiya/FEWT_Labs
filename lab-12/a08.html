@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, fugit!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, itaque error fuga minus quaerat optio.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, sed?</p>
+    </div>
+    <br>
+
+    <button id="Hide">Hide</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#Hide").click(function() {
+                $("p").siblings().hide();
+            });
+        });
+    </script>
+</body>
+</html>
