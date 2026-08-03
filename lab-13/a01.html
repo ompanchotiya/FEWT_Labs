@@ -1,0 +1,154 @@
+<!-- Perform CRUD operation on a static array with FirstName, LastName, Age, Semester, RollNumber, 
+ImagePath etc.. Fields using jQuery  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student CRUD with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { margin: 4px 0; padding: 8px; }
+        table { margin-top: 16px; width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; text-align: left; vertical-align: middle; }
+        img { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; }
+        .actions button { margin-right: 6px; }
+    </style>
+</head>
+<body>
+
+    <h2>Student CRUD</h2>
+
+    <input type="text" id="firstName" placeholder="First Name">
+    <input type="text" id="lastName" placeholder="Last Name">
+    <input type="number" id="age" placeholder="Age">
+    <input type="text" id="semester" placeholder="Semester">
+    <input type="text" id="rollNumber" placeholder="Roll Number">
+    <input type="text" id="imagePath" placeholder="Image Path">
+    <button id="saveStudent">Add Student</button>
+    <button id="clearForm">Clear</button>
+
+    <table border="1" id="studentTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Semester</th>
+                <th>Roll Number</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        function Student(firstName, lastName, age, semester, rollNumber, imagePath) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.semester = semester;
+            this.rollNumber = rollNumber;
+            this.imagePath = imagePath;
+        }
+
+        let students = [
+            new Student("John", "Doe", 21, "Semester 5", "R001", "https://via.placeholder.com/60"),
+            new Student("Jane", "Smith", 20, "Semester 4", "R002", "https://via.placeholder.com/60")
+        ];
+
+        let editIndex = -1;
+
+        function renderTable() {
+            const tbody = $("#studentTable tbody");
+            tbody.empty();
+
+            students.forEach((student, index) => {
+                const row = `
+                    <tr>
+                        <td>${student.firstName}</td>
+                        <td>${student.lastName}</td>
+                        <td>${student.age}</td>
+                        <td>${student.semester}</td>
+                        <td>${student.rollNumber}</td>
+                        <td><img src="${student.imagePath}" alt="Student Image"></td>
+                        <td class="actions">
+                            <button class="editBtn" data-index="${index}">Edit</button>
+                            <button class="deleteBtn" data-index="${index}">Delete</button>
+                        </td>
+                    </tr>
+                `;
+                tbody.append(row);
+            });
+        }
+
+        function clearForm() {
+            $("#firstName, #lastName, #age, #semester, #rollNumber, #imagePath").val("");
+            editIndex = -1;
+            $("#saveStudent").text("Add Student");
+        }
+
+        $(document).ready(function () {
+            renderTable();
+
+            $("#saveStudent").on("click", function () {
+                const firstName = $("#firstName").val().trim();
+                const lastName = $("#lastName").val().trim();
+                const age = $("#age").val().trim();
+                const semester = $("#semester").val().trim();
+                const rollNumber = $("#rollNumber").val().trim();
+                const imagePath = $("#imagePath").val().trim();
+
+                if (!firstName || !lastName || !age || !semester || !rollNumber || !imagePath) {
+                    alert("Please fill all fields.");
+                    return;
+                }
+
+                const student = new Student(firstName, lastName, age, semester, rollNumber, imagePath);
+
+                if (editIndex === -1) {
+                    students.push(student);
+                } else {
+                    students[editIndex] = student;
+                }
+
+                renderTable();
+                clearForm();
+            });
+
+            $("#clearForm").on("click", function () {
+                clearForm();
+            });
+
+            $(document).on("click", ".editBtn", function () {
+                editIndex = $(this).data("index");
+                const student = students[editIndex];
+
+                $("#firstName").val(student.firstName);
+                $("#lastName").val(student.lastName);
+                $("#age").val(student.age);
+                $("#semester").val(student.semester);
+                $("#rollNumber").val(student.rollNumber);
+                $("#imagePath").val(student.imagePath);
+
+                $("#saveStudent").text("Update Student");
+            });
+
+            $(document).on("click", ".deleteBtn", function () {
+                const index = $(this).data("index");
+                if (confirm("Delete this student?")) {
+                    students.splice(index, 1);
+                    renderTable();
+
+                    if (editIndex === index) {
+                        clearForm();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
