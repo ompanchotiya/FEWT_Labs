@@ -1,4 +1,5 @@
-*{
+/* Lab-2 */
+/*
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -107,7 +108,7 @@
             margin-top: 10px;
         }
         header {
-            background-color: #ff9933; /* Saffron */
+            background-color: #ff9933;
             color: white;
             padding: 20px;
             text-align: center;
@@ -134,4 +135,4 @@
         footer a{
             color: #ff9933;
             text-decoration: none;
-        }
+        } */
