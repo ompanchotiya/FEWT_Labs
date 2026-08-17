@@ -2,7 +2,10 @@
 // import Basic_Link2 from "./React_2nd_Lab/Basic_Link2"
 // import Basic_pagedesign from "./React_2nd_Lab/Basic_pagedesign"
 
-import Map_Card from "./React_4th_Lab/Map_Card"
+import Map_List from "./React_4th_Lab/Map_List"
+
+// import Map_Card from "./React_4th_Lab/Map_Card"
+// import Map_Card_places from "./React_4th_Lab/Map_Card_places"
 // import Map_Table from "./React_4th_Lab/Map_Table"
 
 // import Parents from "./React_3ed_Lab/Parent"
@@ -23,7 +26,9 @@ function App(){
      {/* <Display /> */}
 
      {/* <Map_Table /> */}
-     <Map_Card />
+     {/* <Map_Card /> */}
+     {/* <Map_Card_places /> */}
+     <Map_List />
     </>
   )
 }
