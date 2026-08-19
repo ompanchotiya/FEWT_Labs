@@ -2,23 +2,27 @@
 // import Basic_Link2 from "./React_2nd_Lab/Basic_Link2"
 // import Basic_pagedesign from "./React_2nd_Lab/Basic_pagedesign"
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./React_5th_Lab/Home";
-import About from "./React_5th_Lab/About";
-import Contect from "./React_5th_Lab/Contect";
-import Galary from "./React_5th_Lab/Galary";
-import Login from "./React_5th_Lab/Login";
-import Layout from "./React_5th_Lab/Layout";
-import A01 from "./React_5th_Lab/A01";
-import A02 from "./React_5th_Lab/A02";
-import A03 from "./React_5th_Lab/A03";
-import A04 from "./React_5th_Lab/A04";
-import A05 from "./React_5th_Lab/A05";
-import A06 from "./React_5th_Lab/A06";
-import A07 from "./React_5th_Lab/A07";
-import A08 from "./React_5th_Lab/A08";
-import A09 from "./React_5th_Lab/A09";
-import A10 from "./React_5th_Lab/A10";
+// import ChangecountHook from "./React_6th_Lab/ChangeCountHook";
+// import DemoUseEffect from "./React_6th_Lab/DemoUseEffect";
+import HideshowHook from "./React_6th_Lab/HideshowHook";
+
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import Home from "./React_5th_Lab/Home";
+// import About from "./React_5th_Lab/About";
+// import Contect from "./React_5th_Lab/Contect";
+// import Galary from "./React_5th_Lab/Galary";
+// import Login from "./React_5th_Lab/Login";
+// import Layout from "./React_5th_Lab/Layout";
+// import A01 from "./React_5th_Lab/A01";
+// import A02 from "./React_5th_Lab/A02";
+// import A03 from "./React_5th_Lab/A03";
+// import A04 from "./React_5th_Lab/A04";
+// import A05 from "./React_5th_Lab/A05";
+// import A06 from "./React_5th_Lab/A06";
+// import A07 from "./React_5th_Lab/A07";
+// import A08 from "./React_5th_Lab/A08";
+// import A09 from "./React_5th_Lab/A09";
+// import A10 from "./React_5th_Lab/A10";
 
 // import Map_List from "./React_4th_Lab/Map_List"
 // import Map_Card from "./React_4th_Lab/Map_Card"
@@ -47,7 +51,7 @@ function App() {
       {/* <Map_List /> */}
 
       {/* --Lab 5 of react-- */}
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -68,7 +72,12 @@ function App() {
             <Route path="/A10" element={<A10 />}/>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+      {/*--Lab 6 of React-- */}
+      {/* <ChangecountHook /> */}
+      {/* <DemoUseEffect /> */}
+      <HideshowHook />
     </>
   );
 }
