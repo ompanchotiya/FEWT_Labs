@@ -1,15 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-
-function Navbar() {
+function Navbar2() {
   return (
     <div>
-      <button><Link to="/Home">Home</Link></button>
-      <button><Link to="/About">About</Link></button>
-      <button><Link to="/Contect">Contect</Link></button>
-      <button><Link to="/Galary">Galary</Link></button>
-      <button><Link to="/Login">Login</Link></button>
       <button><Link to="/A01">A01</Link></button>
       <button><Link to="/A02">A02</Link></button>
       <button><Link to="/A03">A03</Link></button>
@@ -24,4 +17,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar2

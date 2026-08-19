@@ -4,25 +4,26 @@
 
 // import ChangecountHook from "./React_6th_Lab/ChangeCountHook";
 // import DemoUseEffect from "./React_6th_Lab/DemoUseEffect";
-import HideshowHook from "./React_6th_Lab/HideshowHook";
+// import HideshowHook from "./React_6th_Lab/HideshowHook";
 
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import Home from "./React_5th_Lab/Home";
-// import About from "./React_5th_Lab/About";
-// import Contect from "./React_5th_Lab/Contect";
-// import Galary from "./React_5th_Lab/Galary";
-// import Login from "./React_5th_Lab/Login";
-// import Layout from "./React_5th_Lab/Layout";
-// import A01 from "./React_5th_Lab/A01";
-// import A02 from "./React_5th_Lab/A02";
-// import A03 from "./React_5th_Lab/A03";
-// import A04 from "./React_5th_Lab/A04";
-// import A05 from "./React_5th_Lab/A05";
-// import A06 from "./React_5th_Lab/A06";
-// import A07 from "./React_5th_Lab/A07";
-// import A08 from "./React_5th_Lab/A08";
-// import A09 from "./React_5th_Lab/A09";
-// import A10 from "./React_5th_Lab/A10";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./React_5th_Lab/Home";
+import About from "./React_5th_Lab/About";
+import Contect from "./React_5th_Lab/Contect";
+import Galary from "./React_5th_Lab/Galary";
+import Login from "./React_5th_Lab/Login";
+import Layout1 from "./React_5th_Lab/Layout1";
+import Layout2 from "./React_5th_Lab/Layout2";
+import A01 from "./React_5th_Lab/A01";
+import A02 from "./React_5th_Lab/A02";
+import A03 from "./React_5th_Lab/A03";
+import A04 from "./React_5th_Lab/A04";
+import A05 from "./React_5th_Lab/A05";
+import A06 from "./React_5th_Lab/A06";
+import A07 from "./React_5th_Lab/A07";
+import A08 from "./React_5th_Lab/A08";
+import A09 from "./React_5th_Lab/A09";
+import A10 from "./React_5th_Lab/A10";
 
 // import Map_List from "./React_4th_Lab/Map_List"
 // import Map_Card from "./React_4th_Lab/Map_Card"
@@ -51,33 +52,54 @@ function App() {
       {/* <Map_List /> */}
 
       {/* --Lab 5 of react-- */}
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Contect" element={<Contect />} />
-            <Route path="/Galary" element={<Galary />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/A01" element={<A01 />}/>
-            <Route path="/A02" element={<A02 />}/>
-            <Route path="/A03" element={<A03 />}/>
-            <Route path="/A04" element={<A04 />}/>
-            <Route path="/A05" element={<A05 />}/>
-            <Route path="/A06" element={<A06 />}/>
-            <Route path="/A07" element={<A07 />}/>
-            <Route path="/A08" element={<A08 />}/>
-            <Route path="/A09" element={<A09 />}/>
-            <Route path="/A10" element={<A10 />}/>
-          </Route>
-        </Routes>
-      </BrowserRouter> */}
+      <button
+        onClick={() => {
+          return (
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Layout1 />}>
+                  <Route index element={<Home />} />
+                  <Route path="/Home" element={<Home />} />
+                  <Route path="/About" element={<About />} />
+                  <Route path="/Contect" element={<Contect />} />
+                  <Route path="/Galary" element={<Galary />} />
+                  <Route path="/Login" element={<Login />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          );
+        }}
+      >
+        Layout1
+      </button>
+      
+      <button
+        onClick={() => {
+          return (
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Layout2 />}>
+                  <Route index element={<A01 />} />
+                  <Route path="/A02" element={<A02 />} />
+                  <Route path="/A03" element={<A03 />} />
+                  <Route path="/A04" element={<A04 />} />
+                  <Route path="/A05" element={<A05 />} />
+                  <Route path="/A06" element={<A06 />} />
+                  <Route path="/A07" element={<A07 />} />
+                  <Route path="/A08" element={<A08 />} />
+                  <Route path="/A09" element={<A09 />} />
+                  <Route path="/A10" element={<A10 />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          );
+        }}
+      >Layout2</button>
 
       {/*--Lab 6 of React-- */}
       {/* <ChangecountHook /> */}
       {/* <DemoUseEffect /> */}
-      <HideshowHook />
+      {/* <HideshowHook /> */}
     </>
   );
 }
