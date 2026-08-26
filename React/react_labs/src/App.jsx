@@ -2,28 +2,32 @@
 // import Basic_Link2 from "./React_2nd_Lab/Basic_Link2"
 // import Basic_pagedesign from "./React_2nd_Lab/Basic_pagedesign"
 
+// import { useState } from "react";
+// // import A from "./React_7th_Lab/A01/A";
+// import A from "./React_7th_Lab/A02/A";
+
 // import ChangecountHook from "./React_6th_Lab/ChangeCountHook";
 // import DemoUseEffect from "./React_6th_Lab/DemoUseEffect";
 // import HideshowHook from "./React_6th_Lab/HideshowHook";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./React_5th_Lab/Home";
-import About from "./React_5th_Lab/About";
-import Contect from "./React_5th_Lab/Contect";
-import Galary from "./React_5th_Lab/Galary";
-import Login from "./React_5th_Lab/Login";
-import Layout1 from "./React_5th_Lab/Layout1";
-import Layout2 from "./React_5th_Lab/Layout2";
-import A01 from "./React_5th_Lab/A01";
-import A02 from "./React_5th_Lab/A02";
-import A03 from "./React_5th_Lab/A03";
-import A04 from "./React_5th_Lab/A04";
-import A05 from "./React_5th_Lab/A05";
-import A06 from "./React_5th_Lab/A06";
-import A07 from "./React_5th_Lab/A07";
-import A08 from "./React_5th_Lab/A08";
-import A09 from "./React_5th_Lab/A09";
-import A10 from "./React_5th_Lab/A10";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import Home from "./React_5th_Lab/Home";
+// import About from "./React_5th_Lab/About";
+// import Contect from "./React_5th_Lab/Contect";
+// import Galary from "./React_5th_Lab/Galary";
+// import Login from "./React_5th_Lab/Login";
+// import Layout1 from "./React_5th_Lab/Layout1";
+// import Layout2 from "./React_5th_Lab/Layout2";
+// import A01 from "./React_5th_Lab/A01";
+// import A02 from "./React_5th_Lab/A02";
+// import A03 from "./React_5th_Lab/A03";
+// import A04 from "./React_5th_Lab/A04";
+// import A05 from "./React_5th_Lab/A05";
+// import A06 from "./React_5th_Lab/A06";
+// import A07 from "./React_5th_Lab/A07";
+// import A08 from "./React_5th_Lab/A08";
+// import A09 from "./React_5th_Lab/A09";
+// import A10 from "./React_5th_Lab/A10";
 
 // import Map_List from "./React_4th_Lab/Map_List"
 // import Map_Card from "./React_4th_Lab/Map_Card"
@@ -34,6 +38,10 @@ import A10 from "./React_5th_Lab/A10";
 // import Display from "./React_3ed_Lab/Display"
 
 function App() {
+  // --Lab 7 of react-- 
+  // const [name, setName] = useState("");
+
+
   return (
     <>
       {/* --Lab 2 of react-- */}
@@ -52,7 +60,7 @@ function App() {
       {/* <Map_List /> */}
 
       {/* --Lab 5 of react-- */}
-      <button
+      {/* <button
         onClick={() => {
           return (
             <BrowserRouter>
@@ -94,12 +102,15 @@ function App() {
             </BrowserRouter>
           );
         }}
-      >Layout2</button>
+      >Layout2</button> */}
 
       {/*--Lab 6 of React-- */}
       {/* <ChangecountHook /> */}
       {/* <DemoUseEffect /> */}
       {/* <HideshowHook /> */}
+
+      {/*--Lab 7 of React-- */}
+      {/* <A name={name} setName={setName}/> */}
     </>
   );
 }
