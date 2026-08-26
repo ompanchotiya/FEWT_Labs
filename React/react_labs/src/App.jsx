@@ -2,6 +2,8 @@
 // import Basic_Link2 from "./React_2nd_Lab/Basic_Link2"
 // import Basic_pagedesign from "./React_2nd_Lab/Basic_pagedesign"
 
+import AppContent from "./React_8th_Lab/AppContent";
+
 // import { useState } from "react";
 // // import A from "./React_7th_Lab/A01/A";
 // import A from "./React_7th_Lab/A02/A";
@@ -111,6 +113,9 @@ function App() {
 
       {/*--Lab 7 of React-- */}
       {/* <A name={name} setName={setName}/> */}
+
+
+      <AppContent />
     </>
   );
 }
