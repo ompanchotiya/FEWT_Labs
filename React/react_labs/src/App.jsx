@@ -2,7 +2,9 @@
 // import Basic_Link2 from "./React_2nd_Lab/Basic_Link2"
 // import Basic_pagedesign from "./React_2nd_Lab/Basic_pagedesign"
 
-import AppContent from "./React_8th_Lab/AppContent";
+import SimpleCalculator from "./React_9th_Lab/SimpleCalculator";
+
+// import AppContent from "./React_8th_Lab/AppContent";
 
 // import { useState } from "react";
 // // import A from "./React_7th_Lab/A01/A";
@@ -115,7 +117,11 @@ function App() {
       {/* <A name={name} setName={setName}/> */}
 
 
-      <AppContent />
+      {/*--Lab 8 of React-- */}
+      {/* <AppContent /> */}
+
+      {/*--Lab 9 of React-- */}
+      <SimpleCalculator />
     </>
   );
 }
