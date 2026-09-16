@@ -2,7 +2,9 @@
 // import Basic_Link2 from "./React_2nd_Lab/Basic_Link2"
 // import Basic_pagedesign from "./React_2nd_Lab/Basic_pagedesign"
 
-import SimpleCalculator from "./React_9th_Lab/SimpleCalculator";
+import CRUD from "./React_10th_Lab/CRUD";
+
+// import SimpleCalculator from "./React_9th_Lab/SimpleCalculator";
 
 // import AppContent from "./React_8th_Lab/AppContent";
 
@@ -121,7 +123,10 @@ function App() {
       {/* <AppContent /> */}
 
       {/*--Lab 9 of React-- */}
-      <SimpleCalculator />
+      {/* <SimpleCalculator /> */}
+
+      {/*--Lab 10 of React-- */}
+      <CRUD />
     </>
   );
 }
