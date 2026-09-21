@@ -16,7 +16,7 @@ function AppContent() {
     }
   return (
     <div>
-      {currentuser ? (<Deshboard currentuser={currentuser} handleLogout={handleLogout}/>) : (<LoginPage handleLogin={handleLogin}/>) }
+      {currentuser ? (<Deshboard currentuser={currentuser} handleLogout={han}/>)dleLogout : (<LoginPage handleLogin={handleLogin}/>) }
     </div>
   )
 }

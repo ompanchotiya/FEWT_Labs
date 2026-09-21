@@ -2,7 +2,12 @@
 // import Basic_Link2 from "./React_2nd_Lab/Basic_Link2"
 // import Basic_pagedesign from "./React_2nd_Lab/Basic_pagedesign"
 
-import CRUD from "./React_10th_Lab/CRUD";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import StudentDetails from "./React_11th_Lab/StudentDetails";
+import StudentList from "./React_11th_Lab/StudentList";
+import Studentfrom from "./React_11th_Lab/Studentfrom";
+
+// import CRUD from "./React_10th_Lab/CRUD";
 
 // import SimpleCalculator from "./React_9th_Lab/SimpleCalculator";
 
@@ -126,7 +131,17 @@ function App() {
       {/* <SimpleCalculator /> */}
 
       {/*--Lab 10 of React-- */}
-      <CRUD />
+      {/* <CRUD /> */}
+
+      {/*--Lab 11 of React-- */}
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<StudentList />} />
+              <Route path="/studentdetails/:id" element={<StudentDetails />} />
+              <Route path="/studentform" element={<Studentfrom />} />
+              <Route path="/studentform/:id" element={<Studentfrom />} />
+          </Routes>
+      </BrowserRouter>
     </>
   );
 }
