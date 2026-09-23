@@ -46,7 +46,7 @@ function StudentDetails() {
         <p><b>Address:</b> {student.address}</p>
 
         <div className="d-flex gap-2 m-3">
-          <Link to={`/studentform/${id}`}>
+          <Link to={`/StudentForm/${id}`}>
             <button className="btn btn-warning btn-sm">Edit</button>
           </Link>
 

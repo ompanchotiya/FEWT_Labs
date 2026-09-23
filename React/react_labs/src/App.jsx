@@ -2,10 +2,10 @@
 // import Basic_Link2 from "./React_2nd_Lab/Basic_Link2"
 // import Basic_pagedesign from "./React_2nd_Lab/Basic_pagedesign"
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import StudentDetails from "./React_11th_Lab/StudentDetails";
-import StudentList from "./React_11th_Lab/StudentList";
-import Studentfrom from "./React_11th_Lab/Studentfrom";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import StudentDetails from "./React_11th_Lab/StudentDetails";
+// import StudentList from "./React_11th_Lab/StudentList";
+// import StudentForm from "./React_11th_Lab/Studentfrom";
 
 // import CRUD from "./React_10th_Lab/CRUD";
 
@@ -134,14 +134,16 @@ function App() {
       {/* <CRUD /> */}
 
       {/*--Lab 11 of React-- */}
-      <BrowserRouter>
+      {/* <BrowserRouter>
           <Routes>
               <Route path="/" element={<StudentList />} />
               <Route path="/studentdetails/:id" element={<StudentDetails />} />
-              <Route path="/studentform" element={<Studentfrom />} />
-              <Route path="/studentform/:id" element={<Studentfrom />} />
+              <Route path="/studentform" element={<StudentForm />} />
+              <Route path="/studentform/:id" element={<StudentForm />} />
           </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+      {/*--Lab 12 of React-- */}
     </>
   );
 }

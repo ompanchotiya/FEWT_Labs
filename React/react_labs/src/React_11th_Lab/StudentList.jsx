@@ -42,7 +42,7 @@ function StudentList() {
           <tbody>
             {data.map((item, index) => (
               <tr key={item.id} style={tableStyle} className="p-2">
-                <td style={tableStyle}>{index}</td>
+                <td style={tableStyle}>{index + 1}</td>
                 <td style={tableStyle}>{index + 1}</td>
                 <td style={tableStyle}>
                   <img

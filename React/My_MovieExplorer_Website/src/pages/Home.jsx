@@ -9,10 +9,7 @@ function Home() {
   
     useEffect(() => {
         fetch(Api_URL, 
-            {method:"GET"}, 
-            Headers: {
-                "Authorization": "Bearer "+{Api_token}, "Content-Type":""
-            }
+            {method:"GET"}
         )
         .then(res => res.json)
         .then((res) => {
